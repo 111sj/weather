@@ -1,0 +1,184 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+
+.container {
+  padding: 20rpx;
+}
+
+.search-box {
+  display: flex;
+  margin-bottom: 30rpx;
+}
+
+.search-box input {
+  flex: 1;
+  height: 80rpx;
+  border: 1px solid #ddd;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  margin-right: 20rpx;
+}
+
+.search-box button {
+  width: 180rpx;
+  height: 80rpx;
+  background: #007AFF;
+  color: white;
+  font-size: 35rpx;
+}
+
+.weather-info {
+  background: #f8f8f8;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  text-align: center;
+}
+
+.city-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.temp-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+
+.temperature {
+  font-size: 72rpx;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+
+.weather-icon {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.weather-desc {
+  font-size: 32rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.air-quality {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rpx;
+  font-size: 28rpx;
+}
+
+.aqi-level {
+  padding: 4rpx 16rpx;
+  background: #4CAF50;
+  color: white;
+  border-radius: 20rpx;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+  margin-top: 100rpx;
+}
+
+.temp-tips {
+  margin: 20rpx 0;
+  padding: 20rpx;
+  background: rgba(0, 122, 255, 0.1);
+  border-radius: 12rpx;
+}
+
+.tips-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+}
+
+.tips-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.tips-content text {
+  font-size: 28rpx;
+  color: #007AFF;
+}
+
+/* 高温提示样式 */
+.temp-tips.high-temp {
+  background: rgba(255, 59, 48, 0.1);
+}
+
+.temp-tips.high-temp .tips-content text {
+  color: #FF3B30;
+}
+
+/* 低温提示样式 */
+.temp-tips.low-temp {
+  background: rgba(0, 122, 255, 0.1);
+}
+
+.temp-tips.low-temp .tips-content text {
+  color: #007AFF;
+}
+
+/* 历史记录样式 */
+.history-section {
+  margin: 20rpx 0 30rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx;
+}
+
+.history-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.clear-history {
+  color: #007AFF;
+  font-size: 26rpx;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 20rpx;
+  background: #f8f8f8;
+  border-radius: 8rpx;
+}
+
+.history-city {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.history-arrow {
+  width: 32rpx;
+  height: 32rpx;
+  opacity: 0.5;
+}

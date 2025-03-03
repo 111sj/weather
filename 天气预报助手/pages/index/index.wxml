@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<navigation-bar title="天气预报助手" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<view class="container">
+  <view class="search-box">
+    <input type="text" placeholder="请输入城市名称" bindinput="onInputChange" value="{{cityName}}" />
+    <button bindtap="searchWeather">查询</button>
+  </view>
+
+  <view class="history-section" wx:if="{{historyList.length > 0}}">
+    <view class="history-title">
+      <text>历史记录</text>
+      <text class="clear-history" bindtap="clearHistory">清除</text>
+    </view>
+    <view class="history-list">
+      <view class="history-item" wx:for="{{historyList}}" wx:key="index" bindtap="onHistoryItemTap" data-city="{{item}}">
+        <text class="history-city">{{item}}</text>
+        <image class="history-arrow" src="/images/arrow.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  
+  <view class="weather-info" wx:if="{{weatherData}}">
+    <view class="city-name">{{weatherData.cityName}}</view>
+    <view class="temp-box">
+      <text class="temperature">{{weatherData.temp}}°C</text>
+      <image class="weather-icon" src="{{weatherData.iconUrl}}" mode="widthFix"></image>
+    </view>
+    <view class="weather-desc">{{weatherData.text}}</view>
+    
+    <view class="temp-tips" wx:if="{{weatherData.tempTips}}">
+      <view class="tips-content">
+        <image class="tips-icon" src="/images/{{weatherData.tempTips.icon}}.png" mode="widthFix"></image>
+        <text>{{weatherData.tempTips.text}}</text>
+      </view>
+    </view>
+    
+    <view class="air-quality">
+      <text>空气质量：{{weatherData.aqi}}</text>
+      <text class="aqi-level">{{weatherData.aqiLevel}}</text>
+    </view>
+  </view>
+
+  <view class="no-data" wx:if="{{!weatherData}}">
+    <text>请输入城市名称查询天气</text>
+  </view>
+</view>
